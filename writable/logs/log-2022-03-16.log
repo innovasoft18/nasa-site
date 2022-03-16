@@ -1,0 +1,28 @@
+CRITICAL - 2022-03-16 15:48:43 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp-74\htdocs\nasa\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp-74\htdocs\nasa\public\index.php(28): require('C:\\xampp-74\\htd...')
+#4 {main}
+CRITICAL - 2022-03-16 15:49:27 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp-74\htdocs\nasa\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp-74\htdocs\nasa\public\index.php(28): require('C:\\xampp-74\\htd...')
+#4 {main}
+CRITICAL - 2022-03-16 15:49:28 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp-74\htdocs\nasa\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp-74\htdocs\nasa\public\index.php(28): require('C:\\xampp-74\\htd...')
+#4 {main}
+CRITICAL - 2022-03-16 10:39:50 --> syntax error, unexpected '}', expecting ';'
+#0 C:\xampp-74\htdocs\nasa\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp-74\\htd...')
+#1 C:\xampp-74\htdocs\nasa\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp-74\htdocs\nasa\index.php(75): CodeIgniter\CodeIgniter->run()
+#8 {main}
