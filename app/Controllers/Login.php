@@ -11,7 +11,7 @@ class Login extends BaseController
     {
         $session=session();
         if($session->get('login')){       
-            return redirect()->to('/login');
+            return redirect()->to('/adm');
         }else{
             echo view('includes/admin/pagina/head');        
             echo view("includes/admin/login");           
@@ -20,12 +20,10 @@ class Login extends BaseController
     }
 
     // Funcion de inicio de sesión
-    public function InicioSesion()
+    public function iniciosesion()
     {
-        echo "<pre>".print_r($this->request->getPost(),1)."</pre>";
-        die();
-        
-        if($_POST){
+  
+        if($this->request->getPost()){
             // Captura de datos formulario login
             $datos=([
                 'usuario'=>$this->request->getPost('loginUsername'),
@@ -48,11 +46,11 @@ class Login extends BaseController
 
             //Creación de array con los datos de la sesión
             $datases = [
-                'idusuarios'    =>$data[0]->idusuarios,
-                'usuario'       =>$data[0]->usuario,
-                'idRoles'       =>$data[0]->idRoles,
-                'login'		    => true
-                                ];
+                'u.usuario_id,'             =>$data[0]->usuario_id,
+                'u.usuario_usuario'         =>$data[0]->usuario_usuario,
+                'u.usuario_rol_id'          =>$data[0]->usuario_rol_id,
+                'login'		                => true
+                        ];
             
             //Creación de sesión                    
             $session = session();
@@ -64,11 +62,11 @@ class Login extends BaseController
     }
 
     // Cerrar session
-    public function Salir()
+    public function salir()
     {
         $session = session();
         $session->destroy();
-        return redirect()->to(IP_SERVER);
+        return redirect()->to(IP_SERVER."login");
     }
 
 }

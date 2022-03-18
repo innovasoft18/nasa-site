@@ -7,7 +7,7 @@
                     <img src="<?php echo IP_SERVER ?>assets/images/logo.png" alt="Logo" style="width: 150px; height: 150px;">
                     <div class="logo text-uppercase"><span></span><strong class="text-primary">NASA - UNIHORIZONTE</strong></div>
                     <p>Escuela de aprendizaje</p>
-                    <form method="post" action="<?php echo IP_SERVER ?>login/InicioSesion/" class="text-left form-validate">
+                    <form method="post" action="<?php echo IP_SERVER ?>login/iniciosesion" class="text-left form-validate">
                     <div class="form-group-material">
                         <input id="login-Username" type="text" name="loginUsername" required data-msg="Por favor ingrese su usuario" class="input-material">
                         <label for="login-Username" class="label-material">Usuario</label>
@@ -19,7 +19,9 @@
                     <div class="form-group text-center"><input type="submit" name="Iniciar" value="Iniciar" class="btn btn-primary">
                         <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                     </div>
-                    </form><a href="#" class="forgot-pass">Olvido su contraseña?</a>
+                    </form>
+                    <a href="#" class="forgot-pass">Olvido su contraseña?</a>
+                    <a href="<?php echo IP_SERVER ?>" class="forgot-pass">Volver</a>
                 </div>
                 </div>
             </div>

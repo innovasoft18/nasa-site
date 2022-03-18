@@ -32,8 +32,13 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+// Ruta de inicio de sesión plataforma de administración
 $routes->get('/login', 'Login::index');
+// Ruta Inicio panel de la  plataforma de administración
 $routes->get('/adm', 'Admin::index'); 
+// Ruta para cerrar la sesión abierta
+$routes->get('/sign_out', 'Login::salir');
+
 
 /*
  * --------------------------------------------------------------------

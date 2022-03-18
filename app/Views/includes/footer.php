@@ -49,6 +49,7 @@
                     <li><a href=""><span>Contacto</span></a></li>
                     <li><a href=""><span class="btn-text">Cursos</span></a></li>
                     <li><a href=""><span class="btn-text">Unihorizonte</span></a></li>
+                    <li><a href="<?php echo IP_SERVER; ?>adm"><span class="btn-text">Admin</span></a></li>
                   </ul>
                 </div>
               </div>
