@@ -80,14 +80,6 @@ defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest auto
 $enviroment = "DEVELOPMENT"; // PRODUCTION DEVELOPMENT
 if ($enviroment == "DEVELOPMENT") {
     define('IP_SERVER', 'http://localhost/nasa/'); //Ip o ruta desarrollo
-    define('HOSTNAME', 'localhost');
-    define('USERNAME', 'root');
-    define('PASSWORD', '');
-    define('DATABASE', 'nasa');
 } else if ($enviroment == "PRODUCTION") {
     define('IP_SERVER', ''); //Ip o ruta produccion
-    define('HOSTNAME', '');
-    define('USERNAME', '');
-    define('PASSWORD', '');
-    define('DATABASE', '');
 }
