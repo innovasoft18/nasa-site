@@ -6,6 +6,8 @@
     <script src="<?php echo IP_SERVER ?>assets/vendor/jquery-validation/jquery.validate.min.js"></script>
     <script src="<?php echo IP_SERVER ?>assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="<?php echo IP_SERVER ?>assets/js/contrasena.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Main File-->
     <script src="<?php echo IP_SERVER ?>assets/js/front.js"></script>
 </body>

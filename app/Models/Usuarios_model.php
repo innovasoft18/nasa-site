@@ -37,9 +37,10 @@ class Usuarios_model extends Model {
                         ->where('u.usuario_usuario =', $data['usuario'])
                         ->where('u.usuario_contrasena =', $data['passwd']);
         $query   = $builder->get()->getResult(); 
-       return $query;
-        
-    }
+       
+       return $query;        
+    } 
+
    
 }
 ?>

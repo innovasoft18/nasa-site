@@ -19,33 +19,24 @@ class Login extends BaseController
         }
     }
 
-    // Funcion de inicio de sesión
-    public function iniciosesion()
-    {
-  
-        if($this->request->getPost()){
-            // Captura de datos formulario login
-            $datos=([
-                'usuario'=>$this->request->getPost('loginUsername'),
-                // 'passwd'=>md5($this->request->getPost('loginPassword'))
-                'passwd'=>$this->request->getPost('loginPassword')
-            ]);
+    public function iniciosesion(){
+        $datos=([
+            'usuario'=>$this->request->getPost('loginUsername'),                
+            'passwd'=>$this->request->getPost('loginPassword')
+        ]);
 
-            // Validacion de usuario con usuario y contraseña
-            $usuarioModel = new Usuarios_model();
-            $data=$usuarioModel->getUsuario($datos);
-            
-            //Usuario o contraseña incorrecta
-            if (!$data){
-                $datoMsg 						= [];
-                $datoMsg['descrip']	= 'Las credenciales suministradas son incorrectas. Por favor verifique e intente nuevamente.';
-                $datoMsg['ruta']	= 'login';
-                // Alerta de credenciales incorrectas
-                echo view('includes/admin/alertas/alertasmsg', $datoMsg);
-            }
 
-            //Creación de array con los datos de la sesión
-            $datases = [
+        $usuarioModel = new Usuarios_model();
+        $data=$usuarioModel->getUsuario($datos);
+
+        if (!$data){           
+        
+            return $salida="false";
+
+        }else{           
+
+             //Creación de array con los datos de la sesión
+             $datases = [
                 'u.usuario_id,'             =>$data[0]->usuario_id,
                 'u.usuario_usuario'         =>$data[0]->usuario_usuario,
                 'u.usuario_rol_id'          =>$data[0]->usuario_rol_id,
@@ -55,9 +46,6 @@ class Login extends BaseController
             //Creación de sesión                    
             $session = session();
             $session->set($datases);
-
-            // Redireccionamiento a la pagina principal del modulo de adminsitración
-            return redirect()->to(IP_SERVER."adm");
         }
     }
 
@@ -70,3 +58,4 @@ class Login extends BaseController
     }
 
 }
+ 
