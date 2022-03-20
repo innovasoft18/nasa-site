@@ -22,7 +22,7 @@ class Login extends BaseController
     public function iniciosesion(){
         $datos=([
             'usuario'=>$this->request->getPost('loginUsername'),                
-            'passwd'=>$this->request->getPost('loginPassword')
+            'passwd'=>md5($this->request->getPost('loginPassword'))
         ]);
 
 
@@ -37,9 +37,9 @@ class Login extends BaseController
 
              //Creación de array con los datos de la sesión
              $datases = [
-                'u.usuario_id,'             =>$data[0]->usuario_id,
-                'u.usuario_usuario'         =>$data[0]->usuario_usuario,
-                'u.usuario_rol_id'          =>$data[0]->usuario_rol_id,
+                'usuario_id'             =>$data[0]->usuario_id,
+                'usuario_usuario'         =>$data[0]->usuario_usuario,
+                'usuario_rol_id'          =>$data[0]->usuario_rol_id,
                 'login'		                => true
                         ];
             

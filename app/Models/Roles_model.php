@@ -23,7 +23,5 @@ class Roles_model extends Model {
         parent::__construct();
     }
     
-  
-    
 }
 ?>

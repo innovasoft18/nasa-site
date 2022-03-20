@@ -38,6 +38,9 @@ $routes->get('/login', 'Login::index');
 $routes->get('/adm', 'Admin::index'); 
 // Ruta para cerrar la sesión abierta
 $routes->get('/sign_out', 'Login::salir');
+// Ruta para cerrar la sesión abierta
+$routes->get('/perfil', 'Perfil::perfil');
+
 
 
 /*

@@ -59,7 +59,7 @@
                 <li><a href="<?php echo IP_SERVER ?>adm">Inactivos</a></li>                
               </ul>
             </li>            
-            <li><a href="<?php echo IP_SERVER ?>Perfil"> <i class="icon-user"></i>Perfil                             </a></li>            
+            <li><a href="<?php echo IP_SERVER ?>perfil"> <i class="icon-user"></i>Perfil                             </a></li>            
           </ul>
         </div>
       </div>
