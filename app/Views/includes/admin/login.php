@@ -28,7 +28,7 @@
             </div>
         </div>   
     </div>
-    <script src="<?php echo IP_SERVER ?>assets/js/validarlogin.js"></script>
+    <script src="<?php echo IP_SERVER ?>assets/js/login/validarlogin.js"></script>
     <!-- Default footer-->
 <footer class=" main-footer">
         <div class="container-fluid"> 

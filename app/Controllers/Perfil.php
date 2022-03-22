@@ -13,16 +13,16 @@ class Perfil extends BaseController
         $session=session();
         if($session->get('login')){       
             echo view('includes/admin/pagina/head');
-            echo view('includes/admin/pagina/scripts');
             
             $usuarioModel = new Usuarios_model();
             $data['usuario'] = $usuarioModel->getPerfil($session->get('usuario_id'));
-
+            
             if (($session->get('usuario_rol_id')==1)){
                 echo view('includes/admin/menus/super_admin');
             }
             
             echo view('includes/admin/perfil',$data);
+            echo view('includes/admin/pagina/scripts');
             echo view('includes/admin/pagina/footer');
         }else{
             echo view('includes/admin/pagina/head');        

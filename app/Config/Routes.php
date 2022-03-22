@@ -40,6 +40,9 @@ $routes->get('/adm', 'Admin::index');
 $routes->get('/sign_out', 'Login::salir');
 // Ruta para cerrar la sesión abierta
 $routes->get('/perfil', 'Perfil::perfil');
+// Ruta para banners Activos
+$routes->get('/bactivos', 'Banners::bannersactivos');
+
 
 
 

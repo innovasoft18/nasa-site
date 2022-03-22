@@ -132,5 +132,5 @@
         </div>
     </form>
         </div>        
-        <script src="<?php echo IP_SERVER ?>assets/js/actualziarperfil.js"></script>
+        <script src="<?php echo IP_SERVER ?>assets/js/perfil/actualziarperfil.js"></script>
     </div>

@@ -28,7 +28,17 @@ class Banner_model extends Model {
         parent::__construct();
     }
     
-  
+   // Obtener datos de usuario para pagina de perfil
+   public function getBanersActivos()
+   {
+       $builder = $this->db
+           ->table($this->table)           
+           ->where('b.banner_estado_id =', 1);
+           
+       $query   = $builder->get()->getResult(); 
+
+       return $query; 
+   }
     
 }
 ?>
