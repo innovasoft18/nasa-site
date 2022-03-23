@@ -1,3 +1,4 @@
+<base href="<?php IP_SERVER ?>">
 <!-- Breadcrumb-->
 <div class="breadcrumb-holder">
     <div class="container-fluid">
@@ -24,12 +25,14 @@
                         </svg></span></div>
                       </div>                      
                       <input class="form-control" id="buscar" type="text" placeholder="Nombre, fecha publicación, fecha despublicación, descripción ....">&nbsp;&nbsp;&nbsp;
-                      <a href="<?php echo IP_SERVER."Usuarios/UsuariosCrear"; ?>" type="button" class="btn btn btn-success text-white" data-toggle="tooltip" data-placement="bottom" title="Crear"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg></a>                                              
+                      <span  data-toggle="modal" data-target="#myModal">
+                          <a type="button" class="btn btn btn-success text-white" data-toggle="tooltip" data-placement="bottom" title="Crear"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg></a>                                              
+                      </span>
                     </div>
                   </div>
                 </div>
-          </div>
-          <form action="" method="POST">  
+          </div>          
+          <form action="<?php echo IP_SERVER?>Banners/bannersactivos" method="POST" id="banner_fechas">  
             <div class="form-group row">            
               <div class="col-sm-12">
                 <div class="form-group">
@@ -37,21 +40,30 @@
                     <div class="input-group-prepend">
                     <div class="input-group-prepend"><span class="input-group-text">Fecha Inicio</span></div>
                     </div>
-                    <input type="date" name="fechaini" required class="form-control" id="fechaini">
+                    <input required type="date" name="fechaini" required class="form-control" id="fechaini" <?php if(!empty($_POST)){                        
+                        ?> value="<?php if(!empty($fechaini)){
+                            echo $fechaini;
+                        }else{
+                            echo "";
+                        }}?>">
                     <div class="input-group-prepend">
                     <div class="input-group-prepend"><span class="input-group-text">Fecha Fin</span></div>
                     </div>
-                    <input type="date" name="fechafin" required class="form-control" id="fechafin">
-                    <button class="btn btn-primary profile-button" type="submit">Actualizar</button>
+                    <input type="date" name="fechafin" required class="form-control" id="fechafin" <?php if(!empty($_POST)){
+                        ?> value="<?php if(!empty($fechafin)){
+                            echo $fechafin;
+                        }else{
+                            echo "";
+                        }}?>">                   
                     <button type="sumbit" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Buscar" id="buscarfecha"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg></button>
+                    <form action="" method="post">
+                        <button type="reset" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom" title="Limpiar" id="limpiarfecha"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16"><path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/></svg></button>
+                    </form>
                   </div>                           
                 </div>
               </div>
-            </div>
-            <div>
-                <script src="<?php echo IP_SERVER ?>assets/js/banners/banners.js"></script>          
             </div>
           </form> 
           <div class="row">
@@ -60,6 +72,13 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
+                        <?php if(!empty($_POST)){
+                            if(!empty($fechaini) && !empty($fechafin)){
+                        ?>
+                        <div>            
+                            <label for="register-obra" class="label-material">Fecha Inicio: <?php echo $fechaini;?> - Fecha Fin: <?php echo $fechaini;?></label>    
+                        </div>
+                        <?php }}?>
                       <thead class="thead-dark">
                         <tr class="text-center">
                             <th>#</th>
@@ -104,8 +123,60 @@
               </div>
             </div>
           </div>
+          <div class="card">
+                  <!-- Modal-->
+                  <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+                    <div role="document" class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 id="exampleModalLabel" class="modal-title">Agregar Banner</h5>
+                          <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                        </div>
+                        <div class="modal-body">                          
+                          <form method="POST" id="banner_crear">
+                            <div class="banner_nombre">
+                              <label>Nombre</label>
+                              <div class="input-group">
+                                <input type="text" placeholder="Banner 1" class="form-control" name="banner_nombre" id="banner_nombre">
+                              </div>
+                            </div>
+                            <div class="banner_ipublicacion">
+                              <label>Fecha inicio de publicación</label>
+                              <div class="input-group">
+                                <input type="date" class="form-control" name="banner_ipublicacion" id="banner_ipublicacion">
+                              </div>
+                            </div>
+                            <div class="banner_fpublicacion">
+                              <label>Fecha fin de publicación</label>
+                              <div class="input-group">
+                                <input type="date" class="form-control" name="banner_fpublicacion" id="banner_fpublicacion" >
+                              </div>
+                            </div>
+                            <div class="banner_descripcion">
+                              <label>Descripción Corta</label>
+                              <div class="input-group">
+                              <textarea class="form-control form-control-has-validation" placeholder="Descripción" name="banner_descripcion" data-constraints="" cols="30" rows="10" style="height: 100px;" ></textarea>
+                              </div>
+                            </div>
+                            <div class="banner_path">
+                              <label>Banner</label>
+                              <div class="input-group">
+                                <input type="file" require class="form-control" name="banner_path" id="banner_file" >
+                              </div>
+                            </div>
+                            <br>                           
+                            <div class="modal-footer">
+                              <button type="button" data-dismiss="modal" class="btn btn-secondary">Cerrar</button>
+                              <input type="submit" id="bannerc" name="bannerc" value="Crear Banner" class="btn btn-primary">
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
         </div>
-      </section>
-      <!-- <div>
+      </section>      
+      <div>
         <script src="<?php echo IP_SERVER ?>assets/js/banners/banners.js"></script>          
-    </div> -->
+    </div>

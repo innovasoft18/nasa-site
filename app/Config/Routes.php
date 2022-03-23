@@ -42,6 +42,7 @@ $routes->get('/sign_out', 'Login::salir');
 $routes->get('/perfil', 'Perfil::perfil');
 // Ruta para banners Activos
 $routes->get('/bactivos', 'Banners::bannersactivos');
+$routes->post('/bcrear', 'Banners::bannerscrear');
 
 
 

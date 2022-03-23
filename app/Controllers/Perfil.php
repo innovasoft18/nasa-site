@@ -21,7 +21,7 @@ class Perfil extends BaseController
                 echo view('includes/admin/menus/super_admin');
             }
             
-            echo view('includes/admin/perfil',$data);
+            echo view('includes/admin/perfil/perfil',$data);
             echo view('includes/admin/pagina/scripts');
             echo view('includes/admin/pagina/footer');
         }else{
@@ -56,7 +56,7 @@ class Perfil extends BaseController
                 // Llamado a la funcion de Otrod para subir foto en ruta del servidor
                 $foto = new Otros();
                 if(!empty($fotoname)){
-                    $foto->cargarFoto($usuario_foto,$fotoname);
+                    $foto->cargarFoto($usuario_foto,$fotoname,1);
                 }
             }else{
                 // sin foto

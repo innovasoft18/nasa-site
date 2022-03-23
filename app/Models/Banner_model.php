@@ -28,17 +28,48 @@ class Banner_model extends Model {
         parent::__construct();
     }
     
-   // Obtener datos de usuario para pagina de perfil
-   public function getBanersActivos()
+   // Obtener datos de banners
+   public function getBaners($estado=null)
    {
        $builder = $this->db
            ->table($this->table)           
-           ->where('b.banner_estado_id =', 1);
+           ->where('b.banner_estado_id =', $estado);
+           
+           $query   = $builder->get()->getResult(); 
+           
+           return $query; 
+   }
+
+   // Obtener datos de banners con filtro de fechas
+   public function getBanersFechas($fechaini=null,$fechafin=null,$estado=null)
+   {     
+       $builder = $this->db
+            ->table($this->table)        
+            ->select('*')        
+            ->where('b.banner_ipublicacion >',$fechaini)
+            ->where('b.banner_ipublicacion <',$fechafin)
+            ->where('b.banner_estado_id =', $estado)
+            ->orderBy('b.banner_id', 'DESC');
            
        $query   = $builder->get()->getResult(); 
-
        return $query; 
    }
+
+   // Guardar Banner
+   public function setBanner($data)
+   {
+
+    // echo "</pre>".print_r($data,1)."</pre>";
+    //  die();
+
+       $this->db->table('banner')
+                   ->insert($data);    
+
+
+
+   }
+
+   
     
 }
 ?>

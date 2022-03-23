@@ -1,0 +1,26 @@
+ERROR - 2022-03-22 19:38:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as `b` (`banner_nombre`, `banner_ipublicacion`, `banner_fpublicacion`, `banne...' at line 1
+CRITICAL - 2022-03-22 19:38:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as `b` (`banner_nombre`, `banner_ipublicacion`, `banner_fpublicacion`, `banne...' at line 1
+#0 C:\xampp-74\htdocs\nasa\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ba...', 0)
+#1 C:\xampp-74\htdocs\nasa\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ba...')
+#2 C:\xampp-74\htdocs\nasa\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ba...')
+#3 C:\xampp-74\htdocs\nasa\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ba...', Array, false)
+#4 C:\xampp-74\htdocs\nasa\app\Models\Banner_model.php(66): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp-74\htdocs\nasa\app\Controllers\Banners.php(81): App\Models\Banner_model->setBanner(Array)
+#6 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(832): App\Controllers\Banners->bannerscrear()
+#7 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Banners))
+#8 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp-74\htdocs\nasa\index.php(75): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-03-22 19:41:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as `b` (`banner_nombre`, `banner_ipublicacion`, `banner_fpublicacion`, `banne...' at line 1
+CRITICAL - 2022-03-22 19:41:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'as `b` (`banner_nombre`, `banner_ipublicacion`, `banner_fpublicacion`, `banne...' at line 1
+#0 C:\xampp-74\htdocs\nasa\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ba...', 0)
+#1 C:\xampp-74\htdocs\nasa\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ba...')
+#2 C:\xampp-74\htdocs\nasa\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ba...')
+#3 C:\xampp-74\htdocs\nasa\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ba...', Array, false)
+#4 C:\xampp-74\htdocs\nasa\app\Models\Banner_model.php(66): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp-74\htdocs\nasa\app\Controllers\Banners.php(81): App\Models\Banner_model->setBanner(Array)
+#6 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(832): App\Controllers\Banners->bannerscrear()
+#7 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Banners))
+#8 C:\xampp-74\htdocs\nasa\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp-74\htdocs\nasa\index.php(75): CodeIgniter\CodeIgniter->run()
+#10 {main}
